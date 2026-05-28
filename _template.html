@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+  ┌─────────────────────────────────────────────────────────────┐
+  │  HOW TO ADD A PAGE                                            │
+  │  1. Copy this file to a new name, e.g. projects/my-thing.html │
+  │  2. Edit the <title>, meta description, and canonical URL.    │
+  │  3. Fix the breadcrumb (.crumb) so the path is right.         │
+  │  4. Write your content where it says "YOUR CONTENT".         │
+  │  5. Add one <li> linking to it from the relevant index page   │
+  │     (e.g. /projects/index.html). Done — it's live on push.    │
+  │                                                               │
+  │  The look comes from /theme.css automatically. Anything       │
+  │  custom for THIS page goes in the <style> block below.        │
+  └─────────────────────────────────────────────────────────────┘
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- EDIT: title shown in the browser tab / search results -->
+  <title>PAGE TITLE — Kasun Dulara</title>
+  <!-- EDIT: one-sentence description for search engines & link previews -->
+  <meta name="description" content="One clear sentence describing this page.">
+  <!-- EDIT: the final URL of this page -->
+  <link rel="canonical" href="https://kasundulara.me/PATH/PAGE.html">
+
+  <!-- social link preview (optional but nice) -->
+  <meta property="og:title" content="PAGE TITLE — Kasun Dulara">
+  <meta property="og:description" content="One clear sentence describing this page.">
+  <meta property="og:image" content="https://kasundulara.me/assets/me.jpg">
+
+  <!-- the shared terminal theme — keep this line on every page -->
+  <link rel="stylesheet" href="/theme.css">
+
+  <style>
+    /* OPTIONAL: page-specific styles live here. Delete if unused. */
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <!-- EDIT the breadcrumb so it matches where this file lives.
+         Pattern: ~ / section / this-page  (link the parts above this one) -->
+    <div class="topbar">
+      <span class="crumb">
+        <a href="/">~</a><span class="sep">/</span>
+        <a href="/projects/">projects</a><span class="sep">/</span>
+        <span class="here">PAGE</span>
+      </span>
+      <a class="back" href="/projects/">← back</a>
+    </div>
+
+    <!-- terminal-style command line (optional flavor) -->
+    <p class="prompt"><span class="path"> /projects</span><span class="dollar">$</span><span class="cmd">cat PAGE.html</span></p>
+
+    <!-- ───────────────── YOUR CONTENT STARTS HERE ───────────────── -->
+
+    <h1>Page heading</h1>
+    <p class="out dim">subtitle · context · date</p>
+
+    <!-- optional tag chips -->
+    <ul class="tags">
+      <li class="tag on">Main tech</li><li class="tag">Other</li>
+    </ul>
+
+    <h2>a section</h2>
+    <p>Write like you talk. This is a notebook, not a brochure.</p>
+
+    <ul class="bul">
+      <li>A bulleted point.</li>
+      <li>Another one.</li>
+    </ul>
+
+    <div class="note">
+      <span class="label">// a highlight</span>
+      Use this box for the one thing you want remembered.
+    </div>
+
+    <!-- link liberally to other pages — that's what makes this a place -->
+    <p>Related: <a href="/projects/">projects</a>, <a href="/papers/">papers</a>.</p>
+
+    <!-- ────────────────── YOUR CONTENT ENDS HERE ────────────────── -->
+
+    <footer class="foot">
+      <p>→ <a href="/projects/">projects</a> · <a href="/papers/">papers</a> · <a href="/">home</a></p>
+    </footer>
+
+  </main>
+</body>
+
+</html>

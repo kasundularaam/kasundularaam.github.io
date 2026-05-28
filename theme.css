@@ -1,0 +1,233 @@
+/* ──────────────────────────────────────────────────────────────
+   kasun@home  ·  shared terminal theme
+   Every page links this for a consistent look.
+   Page-specific tweaks go in a <style> block on the page itself.
+   ────────────────────────────────────────────────────────────── */
+
+:root {
+  /* soft warm-dark palette — gentle contrast, easy on the eyes */
+  --bg:        #1e1e2e;   /* base */
+  --bg-soft:   #2a2b3c;   /* cards, code blocks */
+  --line:      #313244;   /* borders */
+  --text:      #cdd6f4;   /* body text (soft, not glaring white) */
+  --dim:       #a6adc8;   /* secondary text */
+  --dimmer:    #6c7086;   /* faint text */
+  --amber:     #fab387;   /* warm peach accent (was harsh amber) */
+  --green:     #a6e3a1;
+  --cyan:      #89b4fa;
+  --red:       #f38ba8;
+  --radius:    6px;
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Menlo", "Cascadia Code", "Roboto Mono", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: 0.1px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--amber); color: #1e1e2e; }
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 22px 80px;
+}
+
+/* ── links ───────────────────────────────────────────────────── */
+a {
+  color: var(--amber);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .12s ease, color .12s ease;
+}
+a:hover { border-bottom-color: var(--amber); }
+a:visited { color: var(--amber); }
+
+/* ── top bar / breadcrumb ────────────────────────────────────── */
+.topbar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  margin-bottom: 26px;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--dim);
+  flex-wrap: wrap;
+}
+.crumb a { color: var(--dim); }
+.crumb a:hover { color: var(--amber); }
+.crumb .sep { color: var(--dimmer); margin: 0 6px; }
+.crumb .here { color: var(--text); }
+.topbar .back { color: var(--dim); }
+
+/* ── prompt lines ────────────────────────────────────────────── */
+.prompt { color: var(--dim); margin: 0; }
+.prompt::before {
+  content: "kasun@home";
+  color: var(--green);
+}
+.prompt .path { color: var(--cyan); }
+.prompt .dollar { color: var(--dim); margin: 0 6px 0 2px; }
+.prompt .cmd { color: var(--text); }
+
+.out { margin: 6px 0 26px; color: var(--text); }
+.out.dim { color: var(--dim); }
+
+/* ── headings ────────────────────────────────────────────────── */
+h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  letter-spacing: 0;
+}
+h1 .glow { color: var(--amber); }
+h2 {
+  font-size: 16px;
+  color: var(--amber);
+  margin: 38px 0 12px;
+  font-weight: 600;
+}
+h2::before { content: "## "; color: var(--dimmer); }
+h3 { font-size: 14px; color: var(--cyan); margin: 24px 0 8px; }
+
+p { margin: 0 0 16px; }
+b, strong { color: #eceffc; font-weight: 600; }
+em { color: var(--dim); font-style: italic; }
+
+/* ── directory listing (the core "navigation") ──────────────── */
+.dir { list-style: none; margin: 0 0 8px; padding: 0; }
+.dir li {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.dir li:hover { border-bottom-color: var(--dimmer); }
+.dir a { min-width: 0; }
+.dir .name { font-weight: 600; white-space: nowrap; }
+.dir .meta { color: var(--dim); font-size: 13px; }
+.dir .when { color: var(--dimmer); font-size: 12px; margin-left: auto; white-space: nowrap; }
+
+/* ── notebook entries ────────────────────────────────────────── */
+.entry {
+  border-left: 2px solid var(--line);
+  padding: 2px 0 2px 16px;
+  margin: 0 0 26px;
+}
+.entry .date { color: var(--dimmer); font-size: 12px; }
+
+/* ── tags / chips ────────────────────────────────────────────── */
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 18px; padding: 0; list-style: none; }
+.tag {
+  font-size: 12px;
+  color: var(--dim);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px 10px;
+  white-space: nowrap;
+}
+.tag.on { color: var(--amber); border-color: rgba(250,179,135,.45); }
+
+/* ── callout / note box ─────────────────────────────────────── */
+.note {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--amber);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin: 18px 0;
+  color: var(--text);
+}
+.note .label { color: var(--amber); font-size: 12px; display: block; margin-bottom: 4px; }
+
+/* ── code ────────────────────────────────────────────────────── */
+code {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 13px;
+  color: var(--cyan);
+}
+pre {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-x: auto;
+  line-height: 1.55;
+}
+pre code { background: none; border: none; padding: 0; color: var(--text); }
+
+/* ── blinking cursor ─────────────────────────────────────────── */
+.cursor {
+  display: inline-block;
+  width: 9px;
+  height: 1.05em;
+  background: var(--amber);
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  animation: blink 1.05s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ── lists ───────────────────────────────────────────────────── */
+ul.bul { list-style: none; padding-left: 0; }
+ul.bul li { padding-left: 18px; position: relative; margin-bottom: 8px; }
+ul.bul li::before { content: "›"; color: var(--amber); position: absolute; left: 0; }
+
+hr { border: none; border-top: 1px solid var(--line); margin: 34px 0; }
+
+/* ── footer ──────────────────────────────────────────────────── */
+.foot {
+  margin-top: 56px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--dimmer);
+  font-size: 12px;
+}
+.foot a { color: var(--dim); }
+.foot .quote { font-style: italic; color: var(--dim); margin-bottom: 8px; }
+
+/* ── the resident cat 🐈 ─────────────────────────────────────── */
+.cat-art {
+  color: var(--dimmer);
+  font-size: 13px;
+  line-height: 1.3;
+  white-space: pre;
+  margin: 0;
+}
+.cat-art .face { color: var(--amber); }
+
+/* ── images ──────────────────────────────────────────────────── */
+.avatar {
+  width: 116px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  filter: grayscale(.2);
+}
+
+/* ── responsive ──────────────────────────────────────────────── */
+@media (max-width: 560px) {
+  body { font-size: 14px; }
+  .dir li { flex-wrap: wrap; gap: 4px 12px; }
+  .dir .when { margin-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor { animation: none; }
+}

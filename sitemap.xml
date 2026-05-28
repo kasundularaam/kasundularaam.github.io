@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://kasundularaam.github.io/</loc>
-    <lastmod>2025-12-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://kasundulara.me/</loc><lastmod>2026-05-29</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://kasundulara.me/whoami.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kasundulara.me/now.html</loc><lastmod>2026-05-29</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://kasundulara.me/projects/</loc><lastmod>2026-05-29</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kasundulara.me/projects/cloudofgoods-insight-agent.html</loc><lastmod>2026-05-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://kasundulara.me/projects/aboutlk-knowledge-graphs.html</loc><lastmod>2026-05-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://kasundulara.me/projects/xenia-martech.html</loc><lastmod>2026-05-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://kasundulara.me/projects/support-automation.html</loc><lastmod>2026-05-29</lastmod><priority>0.7</priority></url>
+  <url><loc>https://kasundulara.me/projects/elt-data-platform.html</loc><lastmod>2026-05-29</lastmod><priority>0.7</priority></url>
+  <url><loc>https://kasundulara.me/projects/price-prediction-transformer.html</loc><lastmod>2026-05-29</lastmod><priority>0.7</priority></url>
+  <url><loc>https://kasundulara.me/projects/michelin-bottleneck.html</loc><lastmod>2026-05-29</lastmod><priority>0.6</priority></url>
+  <url><loc>https://kasundulara.me/papers/</loc><lastmod>2026-05-29</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kasundulara.me/papers/ppo.html</loc><lastmod>2026-05-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://kasundulara.me/thoughts/</loc><lastmod>2026-05-29</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://kasundulara.me/hobbies/</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>

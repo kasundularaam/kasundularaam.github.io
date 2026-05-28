@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masked Transformer for Sequential Price Prediction — Kasun Dulara</title>
+  <meta name="description"
+    content="Applied R&D adapting a Transformer with masked modeling and a custom tokenization strategy for sequential price prediction, benchmarked against LSTM and XGBoost, deployed via MLflow.">
+  <link rel="canonical" href="https://kasundulara.me/projects/price-prediction-transformer.html">
+  <meta property="og:title" content="Masked Transformer for Sequential Price Prediction">
+  <meta property="og:description" content="Custom-tokenized masked Transformer vs LSTM vs XGBoost, deployed via MLflow.">
+  <meta property="og:image" content="https://kasundulara.me/assets/me.jpg">
+  <link rel="stylesheet" href="/theme.css">
+</head>
+
+<body>
+  <main class="wrap">
+
+    <div class="topbar">
+      <span class="crumb"><a href="/">~</a><span class="sep">/</span><a href="/projects/">projects</a><span class="sep">/</span><span class="here">price-prediction-transformer</span></span>
+      <a class="back" href="/projects/">← projects</a>
+    </div>
+
+    <p class="prompt"><span class="path"> /projects</span><span class="dollar">$</span><span class="cmd">cat price-prediction-transformer.html</span></p>
+
+    <h1>Masked Transformer · Sequential Price Prediction</h1>
+    <p class="out dim">SLTC · applied R&amp;D · 2025</p>
+
+    <ul class="tags">
+      <li class="tag on">Transformers</li><li class="tag on">PyTorch</li>
+      <li class="tag">masked modeling</li><li class="tag">LSTM</li><li class="tag">XGBoost</li><li class="tag">MLflow</li>
+    </ul>
+
+    <h2>the idea</h2>
+    <p>
+      Transformers work well in NLP, so I wanted to see whether the same architecture — with the
+      right framing — could compete with classic sequence models on <b>price prediction</b>. I
+      adapted a Transformer with <b>masked modeling</b> and a <b>custom tokenization strategy</b>
+      built for sequential numeric data, rather than reusing one made for words.
+    </p>
+
+    <h2>testing it properly</h2>
+    <p>
+      I evaluated the model against strong baselines — <b>LSTMs</b> and <b>XGBoost</b> — on the same
+      task, then deployed the best-performing one via <b>MLflow</b> for tracked, reproducible
+      experiments.
+    </p>
+
+    <footer class="foot">
+      <p>→ next: <a href="/projects/michelin-bottleneck.html">Michelin bottleneck modeling</a> · <a href="/projects/">all projects</a> · <a href="/">home</a></p>
+    </footer>
+
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predictive Bottleneck Modeling (Michelin) — Kasun Dulara</title>
+  <meta name="description"
+    content="Michelin internship: a SimPy factory-floor simulation feeding synthetic data to a sequential XGBoost model for proactive production bottleneck prediction, plus an automated FastAPI ETL pipeline.">
+  <link rel="canonical" href="https://kasundulara.me/projects/michelin-bottleneck.html">
+  <meta property="og:title" content="Predictive Bottleneck Modeling — Michelin">
+  <meta property="og:description" content="SimPy simulation + sequential XGBoost for bottleneck prediction; automated FastAPI ETL.">
+  <meta property="og:image" content="https://kasundulara.me/assets/me.jpg">
+  <link rel="stylesheet" href="/theme.css">
+</head>
+
+<body>
+  <main class="wrap">
+
+    <div class="topbar">
+      <span class="crumb"><a href="/">~</a><span class="sep">/</span><a href="/projects/">projects</a><span class="sep">/</span><span class="here">michelin-bottleneck</span></span>
+      <a class="back" href="/projects/">← projects</a>
+    </div>
+
+    <p class="prompt"><span class="path"> /projects</span><span class="dollar">$</span><span class="cmd">cat michelin-bottleneck.html</span></p>
+
+    <h1>Predictive Bottleneck Modeling</h1>
+    <p class="out dim">Michelin Lanka · AI/Data Engineer intern · 2024–2025</p>
+
+    <ul class="tags">
+      <li class="tag on">SimPy</li><li class="tag on">XGBoost</li>
+      <li class="tag">FastAPI</li><li class="tag">SQLite</li><li class="tag">ETL</li>
+    </ul>
+
+    <h2>predicting bottlenecks</h2>
+    <p>
+      I studied the factory floor to understand how the line actually moves, then built an
+      operational workflow simulation in <b>SimPy</b>, generated synthetic datasets from it, and
+      trained a <b>sequential XGBoost</b> model to predict production bottlenecks before they happen.
+    </p>
+
+    <h2>automating the reporting pipeline</h2>
+    <p>
+      The reporting workflow relied on manual Excel ingestion — slow and error-prone. I replaced it
+      with an automated <b>FastAPI + SQLite ETL pipeline</b>, with a hashing mechanism to prevent
+      concurrent data duplication. Reporting time dropped from hours to seconds.
+    </p>
+
+    <footer class="foot">
+      <p>→ <a href="/projects/">all projects</a> · <a href="/whoami.html">whoami</a> · <a href="/">home</a></p>
+    </footer>
+
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudofGoods Product Insight Agent — Kasun Dulara</title>
+  <meta name="description"
+    content="An AI assistant for the CloudofGoods rental platform: FastAPI + Google ADK + Gemini, a streaming Trino→Milvus pipeline that cut inference latency by 75%, with full LLM observability via Opik.">
+  <link rel="canonical" href="https://kasundulara.me/projects/cloudofgoods-insight-agent.html">
+  <meta property="og:title" content="CloudofGoods Product Insight Agent">
+  <meta property="og:description" content="Streaming RAG assistant on FastAPI + ADK + Gemini. −75% inference latency, full LLM observability.">
+  <meta property="og:image" content="https://kasundulara.me/assets/me.jpg">
+  <link rel="stylesheet" href="/theme.css">
+</head>
+
+<body>
+  <main class="wrap">
+
+    <div class="topbar">
+      <span class="crumb"><a href="/">~</a><span class="sep">/</span><a href="/projects/">projects</a><span class="sep">/</span><span class="here">cloudofgoods-insight-agent</span></span>
+      <a class="back" href="/projects/">← projects</a>
+    </div>
+
+    <p class="prompt"><span class="path"> /projects</span><span class="dollar">$</span><span class="cmd">cat cloudofgoods-insight-agent.html</span></p>
+
+    <h1>CloudofGoods · Product Insight Agent</h1>
+    <p class="out dim">iLabs · 2025 · architected, built &amp; deployed end-to-end</p>
+
+    <ul class="tags">
+      <li class="tag on">FastAPI</li><li class="tag on">Google ADK</li><li class="tag on">Gemini</li>
+      <li class="tag">Trino</li><li class="tag">Milvus</li><li class="tag">Streamlit</li><li class="tag">Opik</li>
+    </ul>
+
+    <h2>the problem</h2>
+    <p>
+      CloudofGoods is a rental marketplace. Shoppers needed real-time answers — what does this cost
+      for my dates? what else should I rent with it? — and those answers had to be grounded in a
+      product catalog living in the org's data lakehouse, not hallucinated.
+    </p>
+
+    <h2>what i built</h2>
+    <p>
+      An AI assistant on <b>FastAPI</b>, powered by <b>Google ADK</b> and the <b>Gemini APIs</b>,
+      handling live price calculations and site-wide product recommendations. The main challenge was
+      the data path, not the model.
+    </p>
+    <p>
+      I engineered an optimized <b>streaming data pipeline</b> from the lakehouse via <b>Trino</b>
+      into a <b>Milvus</b> vector database, so the agent retrieves over fresh, embedded product data
+      instead of round-tripping to the warehouse on every query. That single change cut end-to-end
+      inference latency by <b>~75%</b>.
+    </p>
+
+    <h2>making it observable</h2>
+    <p>
+      A model you can't see is a model you can't trust in production. I stood up a <b>Streamlit</b> +
+      <b>Opik</b> dashboard for full-lifecycle LLM observability — traces, latencies, and quality
+      signals — so we could debug and improve the agent with evidence instead of guesses.
+    </p>
+
+    <footer class="foot">
+      <p>→ next: <a href="/projects/aboutlk-knowledge-graphs.html">About.lk knowledge graphs</a> · <a href="/projects/">all projects</a> · <a href="/">home</a></p>
+    </footer>
+
+  </main>
+</body>
+
+</html>

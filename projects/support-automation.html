@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Automation — Kasun Dulara</title>
+  <meta name="description"
+    content="An AI layer for the CloudofGoods ticketing platform: Google ADK drafts context-aware replies by querying live data via Trino and running semantic RAG over Milvus.">
+  <link rel="canonical" href="https://kasundulara.me/projects/support-automation.html">
+  <meta property="og:title" content="Support Automation — CloudofGoods ticketing">
+  <meta property="og:description" content="ADK drafts context-aware replies using Trino live data + Milvus semantic RAG.">
+  <meta property="og:image" content="https://kasundulara.me/assets/me.jpg">
+  <link rel="stylesheet" href="/theme.css">
+</head>
+
+<body>
+  <main class="wrap">
+
+    <div class="topbar">
+      <span class="crumb"><a href="/">~</a><span class="sep">/</span><a href="/projects/">projects</a><span class="sep">/</span><span class="here">support-automation</span></span>
+      <a class="back" href="/projects/">← projects</a>
+    </div>
+
+    <p class="prompt"><span class="path"> /projects</span><span class="dollar">$</span><span class="cmd">cat support-automation.html</span></p>
+
+    <h1>Support Automation</h1>
+    <p class="out dim">iLabs · 2025 · CloudofGoods customer ticketing</p>
+
+    <ul class="tags">
+      <li class="tag on">Google ADK</li><li class="tag on">RAG</li>
+      <li class="tag">Trino</li><li class="tag">Milvus</li>
+    </ul>
+
+    <h2>the problem</h2>
+    <p>
+      Support agents spend most of their time writing the same kinds of replies — but each one needs
+      <em>this</em> customer's order, <em>this</em> situation, and the company's actual service
+      guidelines. Generic templates don't cut it; full manual drafting is slow.
+    </p>
+
+    <h2>what i built</h2>
+    <p>
+      An AI layer for the ticketing platform, built on <b>Google ADK</b>, that generates
+      <b>context-aware draft responses</b> in seconds. It assembles context from two sources:
+    </p>
+    <ul class="bul">
+      <li><b>Live data</b> — customer and order details queried in real time through a <b>Trino</b> lake query engine.</li>
+      <li><b>Memory</b> — high-accuracy semantic <b>RAG</b> over a <b>Milvus</b> vector store to pull historical conversations and matching service guidelines.</li>
+    </ul>
+    <p>
+      The agent drafts; a human approves. Faster responses, consistent tone, grounded in real data.
+    </p>
+
+    <p>
+      It reuses the same Trino + Milvus retrieval layer as the
+      <a href="/projects/cloudofgoods-insight-agent.html">Insight Agent</a>.
+    </p>
+
+    <footer class="foot">
+      <p>→ next: <a href="/projects/elt-data-platform.html">ELT data platform (research)</a> · <a href="/projects/">all projects</a> · <a href="/">home</a></p>
+    </footer>
+
+  </main>
+</body>
+
+</html>

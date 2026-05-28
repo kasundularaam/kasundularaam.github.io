@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PPO, explained to myself — Kasun Dulara</title>
+  <meta name="description"
+    content="Kasun Dulara's working notes on Proximal Policy Optimization (PPO) — the problem it solves, the clipped surrogate objective, and why it became the default RL algorithm.">
+  <link rel="canonical" href="https://kasundulara.me/papers/ppo.html">
+  <meta property="og:title" content="PPO, explained to myself">
+  <meta property="og:description" content="Working notes on Proximal Policy Optimization — the clipped objective, and why it's everywhere.">
+  <meta property="og:image" content="https://kasundulara.me/assets/me.jpg">
+
+  <!-- Structured data: this page is an explanatory article about a paper -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "PPO, explained to myself",
+    "author": { "@type": "Person", "name": "Kasun Dulara", "url": "https://kasundulara.me/" },
+    "about": "Proximal Policy Optimization, reinforcement learning",
+    "url": "https://kasundulara.me/papers/ppo.html"
+  }
+  </script>
+
+  <link rel="stylesheet" href="/theme.css">
+  <style>
+    /* page-specific styles live right here — this is the per-page freedom */
+    .meta-row { color: var(--dim); font-size: 13px; margin-bottom: 18px; }
+    .meta-row a { color: var(--cyan); }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <div class="topbar">
+      <span class="crumb"><a href="/">~</a><span class="sep">/</span><a href="/papers/">papers</a><span class="sep">/</span><span class="here">ppo.html</span></span>
+      <a class="back" href="/papers/">← papers</a>
+    </div>
+
+    <p class="prompt"><span class="path"> /papers</span><span class="dollar">$</span><span class="cmd">cat ppo.html</span></p>
+
+    <h1>PPO, explained to myself <span style="color:var(--green);font-size:16px">🌱 seedling</span></h1>
+    <p class="meta-row">
+      <b>Paper:</b> Proximal Policy Optimization Algorithms · Schulman et al., 2017 ·
+      <a href="https://arxiv.org/abs/1707.06347">arXiv:1707.06347</a>
+    </p>
+
+    <h2>the problem</h2>
+    <p>
+      Policy-gradient methods learn by nudging a policy in the direction that increases reward. The
+      catch: take too big a step and you can wreck a policy that was working, because the data you
+      collected is only valid <em>near</em> the policy that collected it. Earlier methods like TRPO
+      solved this with a hard trust-region constraint — effective, but heavy to implement.
+    </p>
+
+    <h2>the key idea</h2>
+    <p>
+      PPO keeps the "don't move too far" spirit of TRPO but makes it cheap. Instead of a constrained
+      optimization, it <b>clips</b> the objective so the update can't benefit from moving the policy
+      too far from the old one. Simple to code, works with first-order optimizers, and you can run
+      multiple epochs over the same batch.
+    </p>
+
+    <h2>how it works (the clipped objective)</h2>
+    <p>
+      Let <code>r(θ) = π_θ(a|s) / π_old(a|s)</code> be the probability ratio between new and old
+      policy, and <code>Â</code> the advantage estimate. PPO maximizes:
+    </p>
+    <pre><code>L(θ) = E[ min( r(θ)·Â ,  clip(r(θ), 1−ε, 1+ε)·Â ) ]</code></pre>
+    <ul class="bul">
+      <li>When the update is small, <code>r ≈ 1</code> and it behaves like vanilla policy gradient.</li>
+      <li>When <code>r</code> drifts outside <code>[1−ε, 1+ε]</code>, the clip removes the incentive to push further — the gradient flattens.</li>
+      <li><code>ε</code> is typically ~0.2. The <code>min</code> makes the bound pessimistic, so it never rewards over-large steps.</li>
+    </ul>
+
+    <h2>why it matters</h2>
+    <p>
+      PPO hit a sweet spot of <b>simplicity, stability, and sample-efficiency</b> that made it the
+      de facto default for a lot of RL — from control to, famously, the RLHF stage of training
+      modern language models. When people say "we used RL to fine-tune," PPO is very often the
+      algorithm underneath.
+    </p>
+
+    <h2>my take</h2>
+    <p>
+      What I find interesting is the trade-off: PPO swaps a mathematically clean constraint for a
+      simpler heuristic that's easier to implement and tune in practice. Next I want to write up the
+      policy-gradient theorem it builds on, and re-implement PPO from scratch to understand where it
+      breaks.
+    </p>
+
+    <footer class="foot">
+      <p>→ <a href="/papers/">all papers</a> · <a href="/whoami.html">about me</a> · <a href="/">home</a></p>
+    </footer>
+
+  </main>
+</body>
+
+</html>

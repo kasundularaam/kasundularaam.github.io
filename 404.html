@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — no such file</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="/theme.css">
+</head>
+
+<body>
+  <main class="wrap">
+
+    <div class="topbar">
+      <span class="crumb"><a href="/">~</a><span class="sep">/</span><span class="here">???</span></span>
+      <a class="back" href="/">← back home</a>
+    </div>
+
+    <p class="prompt"><span class="path"></span><span class="dollar">:~$</span><span class="cmd">cat <span style="color:var(--text)">$REQUESTED_PATH</span></span></p>
+    <p class="out" style="color:var(--red)">cat: No such file or directory<span class="cursor"></span></p>
+
+    <h1>Page not found</h1>
+    <p>
+      This page doesn't exist — maybe it's not written yet, or the link was wrong.
+    </p>
+
+    <p class="prompt" style="margin-top:24px"><span class="path"></span><span class="dollar">:~$</span><span class="cmd">cd ~</span></p>
+    <ul class="dir" style="margin-top:14px">
+      <li><a href="/"><span class="name">home</span></a><span class="meta">start over</span></li>
+      <li><a href="/projects/"><span class="name">projects/</span></a><span class="meta">things i built</span></li>
+      <li><a href="/papers/"><span class="name">papers/</span></a><span class="meta">paper notes</span></li>
+    </ul>
+
+  </main>
+</body>
+
+</html>
