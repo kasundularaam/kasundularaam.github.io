@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /_template.html
-Sitemap: https://kasundulara.me/sitemap.xml
